@@ -1,0 +1,803 @@
+/* ==========================================================================
+   1. FONTS & UTILITIES
+   ========================================================================== */
+
+@font-face {
+    font-family: 'Inter';
+    src: url("../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Super Fashion';
+    src: url("../fonts/SuperFashion.ttf");
+    font-display: swap;
+}
+
+/* Hilfsklasse für bündige Bilder ohne Verzerrung */
+.object-fit-cover {
+    object-fit: cover;
+}
+
+
+/* ==========================================================================
+   2. BASE & RESET
+   ========================================================================== */
+
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+}
+
+/* Page Layout: Footer bleibt unten, Grundeinstellungen */
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+    font-family: 'Inter', sans-serif;
+    background-color: #FCF5EE;
+    color: #290700;
+    font-weight: 500;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ==========================================================================
+   3. TYPOGRAFIE
+   ========================================================================== */
+
+/* Haupt-Überschriften in Super Fashion */
+h1,
+h2,
+.display-3,
+.display-4,
+.hero-title,
+.about-hero h1,
+.contact-hero h1,
+.projects-header h1 {
+    font-family: 'Super Fashion', sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    margin-bottom: 1.5rem;
+}
+
+.about-hero h1,
+.contact-hero h1,
+.projects-header h1 {
+    font-size: 3.5rem;
+}
+
+.hero-title {
+    font-size: 4rem;
+}
+
+.hero-subtitle {
+    margin-top: 1rem;
+}
+
+/* Zwischenüberschriften in Inter */
+h3,
+h4,
+.card-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    /* Schön dicker Kontrast */
+}
+
+/* Fließtext-Optimierung */
+p,
+.nav-link {
+    font-weight: 500;
+    /* Medium statt Regular für den "Bold-Look" */
+    line-height: 1.6;
+}
+
+/* Lead & Beschreibungen */
+.lead,
+.section-description {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #290700;
+    margin-bottom: 1rem;
+}
+
+/* Spezielles Styling für den Instagram-Link im Text */
+.insta-link {
+    color: #290700;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 2px solid #CEBAD1;
+    /* Ein dezenter lila Unterstrich */
+    transition: all 0.3s ease;
+}
+
+
+/* ==========================================================================
+   4. NAVBAR
+   ========================================================================== */
+
+/* Schlanke, schwebende Pille (Clean) */
+.navbar {
+    padding-top: 15px;
+    background: none !important;
+}
+
+.navbar .container-fluid {
+    max-width: 92%;
+    background-color: #FCF5EE;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 12px;
+    padding: 0.3rem 1.8rem;
+    border: 1px solid rgba(41, 7, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* Nav-Links */
+.navbar-nav .nav-link {
+    font-size: 0.85rem;
+    color: #290700 !important;
+    opacity: 0.5;
+    margin: 0 0.8rem;
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+/* Underline Effekt */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #CEBAD1;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: 15px;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    opacity: 1;
+}
+
+/* Logo Navbar */
+.navbar-brand img {
+    height: 38px;
+    width: auto;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Mobile Navbar Optimierung */
+@media (max-width: 991px) {
+    .navbar-toggler {
+        border: none;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    .navbar-nav {
+        margin-top: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        text-align: left;
+    }
+
+    .navbar-nav .nav-link::after {
+        left: 0;
+        transform: none;
+        /* Hebt das translateX auf */
+    }
+}
+
+
+/* ==========================================================================
+   5. LAYOUT SECTIONS (Hero & Layouts)
+   ========================================================================== */
+
+/* Standard Hero / Full Screen Section */
+.hero,
+.about-hero,
+.contact-hero {
+    min-height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.hero .container,
+.about-hero .container,
+.contact-hero .container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.hero-animation {
+    width: 60%;
+    max-width: 60%;
+    margin-top: 2rem;
+}
+
+/* Hero Video-Text-Side-By-Side */
+.hero-vertical-layout {
+    min-height: 100vh;
+    background-color: #FCF5EE;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-video-contain {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 20px;
+    display: block;
+}
+
+.slide-in-right-delayed {
+    padding-bottom: 20px;
+    /* Richtet den Block optisch an der Videounterkante aus */
+}
+
+@media (max-width: 991px) {
+    .hero-video-contain {
+        max-height: 45vh;
+        margin-bottom: 2rem;
+    }
+
+    .slide-in-right-delayed {
+        padding-bottom: 0;
+    }
+}
+
+
+/* ==========================================================================
+   6. COMPONENTS (Cards, Badges, Carousel)
+   ========================================================================== */
+
+/* --- Project Cards (Standard) --- */
+.project-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #CEBAD1;
+    color: #290700;
+    transition: transform 0.3s ease;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.card-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.image-final {
+    z-index: 2;
+    opacity: 1;
+}
+
+.image-sketch {
+    z-index: 1;
+}
+
+.project-card:hover .image-final {
+    opacity: 0;
+}
+
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    content: "";
+}
+
+/* --- Badges --- */
+.tool-badge,
+.study-badge {
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.6em 1.2em;
+    margin: 0.3rem;
+    display: inline-block;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    text-decoration: none;
+}
+
+.tool-badge {
+    background-color: #CEBAD1;
+    color: #290700;
+}
+
+.study-badge {
+    background-color: #290700;
+    color: #FCF5EE;
+}
+
+/* --- Compact Project Layout --- */
+.project-detail-layout {
+    background-color: #FCF5EE;
+    min-height: 100vh;
+}
+
+.video-container-compact {
+    max-width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.process-side-img {
+    transition: transform 0.3s ease;
+}
+
+.process-side-img img {
+    display: block;
+}
+
+/* --- Carousel --- */
+.carousel-fixed-height {
+    height: 550px;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 0 4px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+    /* Schmalere Klickbereiche */
+}
+
+#designCarousel .carousel-inner {
+    height: 100%;
+    background-image: url("../images/readingBackground.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.carousel-item img {
+    height: 100% !important;
+    object-fit: cover;
+}
+
+#carouselTextDisplay {
+    transition: opacity 0.3s ease-in-out;
+    min-height: 80px;
+}
+
+/* Carousel & Side Images Mobile Optimierung */
+@media (max-width: 991.98px)
+{
+    .col-lg-5 .carousel-fixed-height {
+        height: auto !important;;
+    }
+
+    .process-side-img {
+        height: 350px !important;
+        width: 100%;
+    }
+
+    #designCarousel {
+        height: 350px !important;
+        margin-bottom: 10px;
+    }
+
+    .process-side-img {
+        height: 250px;
+    }
+}
+
+
+/* ==========================================================================
+   7. BENTO BOX GRID SYSTEM
+   ========================================================================== */
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 280px;
+    gap: 1.5rem;
+    grid-auto-flow: dense;
+}
+
+.bento-item .project-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Slim Text Boxes */
+.bento-item .card-body {
+    flex: 0 0 75px !important;
+    padding: 8px 15px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #CEBAD1;
+    overflow: hidden;
+}
+
+.bento-item .card-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #290700;
+    margin: 0 !important;
+    line-height: 1.2;
+}
+
+.bento-item .card-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    color: #290700 !important;
+    margin: 0 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bento-item .card-image-wrapper {
+    padding-top: 0 !important;
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+}
+
+.bento-item .card-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Bento Größen */
+.bento-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.bento-wide {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.bento-tall {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* Doodle Boxen */
+/* Bento Pattern Boxen (ersetzt die Doodle Boxen) */
+.bento-pattern {
+    background-color: transparent;
+    /* Dein neues, großes Bild */
+    background-image: url('../images/doodlesHUGE.png');
+    
+    /* FIXIERT das Bild am Viewport (das Fenster-Gefühl) */
+    background-attachment: fixed;
+    
+    /* SORGT DAFÜR, dass das Bild den kompletten Hintergrund ausfüllt */
+    background-size: cover; 
+    
+    /* KEINE WIEDERHOLUNG */
+    background-repeat: no-repeat;
+    
+    /* Positionierung */
+    background-position: center center;
+
+    border-radius: 12px;
+    border: none !important;
+}
+
+/* Pixel-Art Schärfe-Einstellungen */ 
+.pixel-art-img {
+    image-rendering: pixelated;     /* Scharfe Kanten für Chrome, Edge, Safari */
+    image-rendering: crisp-edges;    /* Scharfe Kanten für Firefox */
+}
+
+/* Bento Responsive (Tablet & Handy) */
+@media (max-width: 991px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 250px;
+        gap: 1rem;
+    }
+
+    .bento-wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 1.5rem;
+    }
+
+    .bento-large,
+    .bento-wide,
+    .bento-tall {
+        grid-column: span 1 !important;
+        grid-row: auto !important;
+    }
+
+    .bento-item {
+        height: 400px;
+    }
+
+    .bento-item .project-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bento-item .card-image-wrapper {
+        flex: 1;
+        min-height: 325px;
+        position: relative;
+    }
+
+    .bento-item .card-body {
+        flex: 0 0 75px !important;
+    }
+
+    .bento-doodle {
+        height: 200px !important;
+        min-height: 200px;
+    }
+}
+
+
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+
+.site-footer {
+    width: 92%;
+    margin: 60px auto 40px auto;
+    background-color: #CEBAD1;
+    padding: 80px 0 40px;
+    color: #290700;
+    border-radius: 12px;
+    border: 1px solid rgba(41, 7, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    position: relative;
+    display: block;
+}
+
+/* Footer Logo Wrapper (mit Perspektive für Rendering) */
+.footer-logo-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 10;
+}
+
+.footer-logo {
+    height: 70px;
+    width: auto;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0s;
+    will-change: transform;
+}
+
+.footer-logo:hover {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.footer-tagline {
+    font-weight: 600;
+    opacity: 0.6;
+    margin-bottom: 40px;
+}
+
+.footer-stamps {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    /* Duplikat aufgelöst */
+    margin-bottom: 40px;
+}
+
+.stamp-btn {
+    padding: 10px 25px;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+}
+
+.stamp-btn:hover {
+    transform: translateY(-3px);
+}
+
+.stamp-beige {
+    background-color: #FCF5EE;
+    color: #290700;
+}
+
+.stamp-dark {
+    background-color: #290700;
+    color: #FCF5EE;
+}
+
+.stamp-outline {
+    border: 1.5px solid #290700;
+    color: #290700;
+}
+
+.footer-mini-impressum {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.footer-mini-impressum p {
+    margin-bottom: 2px;
+}
+
+.footer-address p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.footer-address a:hover {
+    opacity: 1 !important;
+}
+
+.footer-info-bar {
+    border-top: 1px solid rgba(41, 7, 0, 0.1);
+    padding-top: 20px;
+    font-size: 0.75rem;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-info-bar a,
+.footer-legal a {
+    color: #290700;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-info-bar a {
+    margin-left: 5px;
+}
+
+.footer-legal a {
+    margin-left: 15px;
+}
+
+.footer-info-bar a:hover {
+    text-decoration: underline;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #28a745;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    animation: pulse 2s infinite;
+}
+
+
+/* ==========================================================================
+   9. ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+
+.slide-in-left {
+    animation: slideInLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.slide-in-right-delayed {
+    animation: slideInRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.5);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 5px rgba(40, 167, 69, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+}
