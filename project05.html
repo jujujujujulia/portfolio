@@ -4,20 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonne und Mond</title>
+    <title>Sonne und Mond - Julia Konersmann</title>
+    
+    <!-- Stylesheets -->
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-
-
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="images/logo.svg" height="50" alt="Logo">
+                <img src="images/logo.svg" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
@@ -33,6 +34,7 @@
         </div>
     </nav>
 
+    <!-- Header -->
     <section class="projects-header container text-start py-5 mt-4">
         <div class="row">
             <div class="col-lg-12">
@@ -41,15 +43,16 @@
         </div>
     </section>
 
+    <!-- Projektbereich -->
     <section class="project-detail-layout">
         <div class="container pb-5">
 
+            <!-- Titelbild und Beschreibung -->
             <div class="row align-items-start g-5">
                 <div class="col-lg-6">
                     <div class="video-container-compact">
                         <div class="ratio ratio-16x9">
-                            <img src="images/mosu01.png" class="w-100 h-100 object-fit-cover rounded-4"
-                                alt="Lesetracker App">
+                            <img src="images/mosu01.png" class="w-100 h-100 object-fit-cover rounded-4" alt="Sonne und Mond Illustration">
                         </div>
                     </div>
                 </div>
@@ -69,10 +72,9 @@
                             Im Fokus steht dabei der Spaß am Ausprobieren, sowie die Gestaltung niedlicher,
                             bilderbuchartiger Figuren, die eine kleine eigene Welt zum Leuchten bringen. Weitere
                             Illustrationen und Animationen teile ich auf meinem
-                            <a href="https://instagram.com/juk0k0" target="_blank"
-                                class="insta-link">Instagram-Profil</a>.
+                            <a href="https://instagram.com/juk0k0" target="_blank" class="insta-link">Instagram-Profil</a>.
                         </p>
-                        <div class="d-flex flex-wrap gap-2">
+                        <div class="d-flex flex-wrap gap-2 mt-2">
                             <span class="tool-badge">Procreate</span>
                             <span class="tool-badge">Procreate Dreams</span>
                         </div>
@@ -80,16 +82,16 @@
                 </div>
             </div>
 
-
-
+            <!-- Designprozess und Video -->
             <div id="design-process" class="row mt-5">
                 <div class="col-lg-12">
                     <hr style="border-top: 1px solid #290700; opacity: 0.3; margin-bottom: 3rem;">
                     <h3 class="mb-4 text-start">Animation & Details</h3>
 
-                    <div class="row g-4">
+                    <div class="row g-4 align-items-stretch">
+                        <!-- Video-Loop Spalte -->
                         <div class="col-lg-7">
-                            <div class="rounded-4 shadow-sm overflow-hidden carousel-fixed-height">
+                            <div class="rounded-4 shadow-sm overflow-hidden" style="height: 550px;">
                                 <video autoplay loop muted playsinline class="w-100 h-100 object-fit-cover">
                                     <source src="images/mosu.mp4" type="video/mp4">
                                     Dein Browser unterstützt dieses Video leider nicht.
@@ -97,18 +99,18 @@
                             </div>
 
                             <div class="mt-3 text-start">
-                                <p>Animations-Loop<br>Ein 12-sekündiger Einblick in die Dynamik zwischen Sonne und Mond.
-                                </p>
+                                <p><strong>Animations-Loop</strong><br>Ein 12-sekündiger Einblick in die Dynamik zwischen Sonne und Mond.</p>
                             </div>
                         </div>
 
+                        <!-- Prozessbilder Spalte -->
                         <div class="col-lg-5">
-                            <div class="d-flex flex-column gap-4 carousel-fixed-height">
+                            <div class="d-flex flex-column gap-4" style="height: 550px;">
                                 <div class="process-side-img rounded-4 shadow-sm overflow-hidden flex-grow-1">
-                                    <img src="images/mosu01.png" class="w-100 h-100 object-fit-cover" alt="Comic 1">
+                                    <img src="images/mosu01.png" class="w-100 h-100 object-fit-cover" alt="Comic Detail 1">
                                 </div>
                                 <div class="process-side-img rounded-4 shadow-sm overflow-hidden flex-grow-1">
-                                    <img src="images/mosu02.png" class="w-100 h-100 object-fit-cover" alt="Comic 2">
+                                    <img src="images/mosu02.png" class="w-100 h-100 object-fit-cover" alt="Comic Detail 2">
                                 </div>
                             </div>
                         </div>
@@ -118,15 +120,8 @@
 
         </div>
     </section>
-    </div>
-    </div>
 
-
-
-
-    </div>
-    </section>
-
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container text-center">
             <div class="footer-logo-wrapper">
@@ -146,15 +141,15 @@
 
             <div class="footer-info-bar">
                 <div class="footer-copyright w-100">
-                    © 2026 Julia Konersmann • <a href="documents/datenschutzerklaerung.pdf" target="_blank" rel="noopener noreferrer">
-                        Datenschutzerklärung</a>
+                    © 2026 Julia Konersmann • 
+                    <a href="documents/datenschutzerklaerung.pdf" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
