@@ -84,8 +84,8 @@
 
                     <!-- Das Bilder-Grid -->
                     <div class="row g-4 detail-gallery-row align-items-stretch">
-                        <!-- Linke Spalte: Karussell -->
-                        <div class="col-lg-7 col-carousel">
+
+                        <div class="col-lg-7 col-carousel order-1">
                             <div id="designCarousel"
                                 class="carousel slide detail-gallery-container rounded-4 shadow-sm overflow-hidden"
                                 data-bs-ride="false">
@@ -106,7 +106,6 @@
                                                 Konkretisierung des Konzepts beitrug.</p>
                                         </div>
                                     </div>
-
                                     <div class="carousel-item">
                                         <img src="images/luvbirdsSketches.png" alt="Skizzen">
                                         <div class="slide-text d-none">
@@ -114,7 +113,6 @@
                                             </p>
                                         </div>
                                     </div>
-
                                     <div class="carousel-item">
                                         <img src="images/luvbirdsLowfi.png" alt="Prototyp">
                                         <div class="slide-text d-none">
@@ -134,8 +132,15 @@
                             </div>
                         </div>
 
-                        <!-- Rechte Spalte: Zwei Bilder -->
-                        <div class="col-lg-5 col-images">
+                        <div class="col-12 col-lg-7 text-start order-2 order-lg-3 mt-4 mt-lg-5"
+                            style="position: relative; z-index: 5;">
+                            <div id="carouselTextDisplay">
+                                <p><strong>Research</strong><br>Ausschnitt eines Questionnaires, welches zur
+                                    Konkretisierung des Konzepts beitrug.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-images order-3 order-lg-2">
                             <div class="side-image-stack gap-4">
                                 <div class="process-side-img rounded-4 shadow-sm overflow-hidden">
                                     <img src="images/luvbirdsProfil.png" alt="Profil">
@@ -145,17 +150,10 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
-                    <!-- Text-Beschreibung unterhalb des Grids -->
-                    <div class="row text-start" style="margin-top: 3.5rem !important; position: relative; z-index: 5;">
-                        <div class="col-lg-7">
-                            <div id="carouselTextDisplay">
-                                <p><strong>Research</strong><br>Ausschnitt eines Questionnaires, welches zur
-                                    Konkretisierung des Konzepts beitrug.</p>
-                            </div>
-                        </div>
-                    </div>
+
 
                 </div>
             </div>

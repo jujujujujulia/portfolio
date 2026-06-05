@@ -285,12 +285,10 @@ p, .nav-link {
 }
 
 @media (min-width: 992px) {
-    .detail-gallery-row {
-        height: 550px !important;
-    }
+    /* ÄNDERUNG: Die feste Höhe wird von der Row auf die Spalten übertragen */
     .detail-gallery-row .col-carousel,
     .detail-gallery-row .col-images {
-        height: 100% !important;
+        height: 550px !important;
     }
     .detail-gallery-container {
         height: 100% !important;
