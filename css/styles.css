@@ -360,54 +360,52 @@ p, .nav-link {
 }
 
 /* ==========================================================================
-   PORTRAIT POP-OUT SYSTEM (PERFECT FLAT BASE + CIRCULAR CORNERS)
+   PORTRAIT POP-OUT SYSTEM (ZERO-GRAVITY LAYOUT)
    ========================================================================== */
 
    .about-portrait-popout {
     position: relative;
     width: 300px;
-    height: 350px;
+    /* HIER DIE RETTUNG: Nur noch 260px strukturelle Höhe (Größe des lila Blobs).
+       Dadurch wird kein Platz mehr nach oben hin für den Text blockiert! */
+    height: 260px; 
     margin-top: 2rem;
 }
 
-/* Der lila Hintergrund: Unten bombenfest gerade, Ecken perfekt rund */
+/* Der lila Hintergrund füllt jetzt einfach zu 100% den Container aus */
 .about-portrait-popout::before {
     content: '';
     position: absolute;
-    bottom: 0; /* Sitzt wieder exakt auf der Grundlinie */
+    top: 0;
     left: 0;
     width: 100%;
-    height: 260px;
+    height: 100%; /* Nutzt die 260px perfekt aus */
     background-color: #CEBAD1;
     
-    /* DIE MAGIE: Die oberen Werte nutzen % für den organischen Wave-Look.
-       Die unteren Ecken nutzen feste Pixel (35px / 45px), die vor und nach dem / GLEICH sind.
-       Das garantiert einen absolut knickfreien Übergang in die gerade Unterkante!
-    */
-    /* Syntax: oben-links oben-rechts unten-rechts unten-links */
+    /* Perfekt runde Ecken an der Unterkante */
     border-radius: 75% 35% 35px 45px / 100% 65% 35px 45px;
     
     z-index: 1;
     box-shadow: 0 15px 35px rgba(41, 7, 0, 0.08);
-    
-    /* Flüssiger Übergang für den Formwechsel */
     transition: border-radius 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Bild-Styling: Steht stabil auf der geraden Unterkante */
+/* Bild-Styling: Das Bild darf nun offiziell nach oben "ausbrechen" */
 .about-portrait-popout img {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    /* Das Bild behält seine volle Höhe von 350px. Da es absolut positioniert ist, 
+       nimmt der Kopf oben keinen Platz im Layout weg (0px Auswirkung auf den Text!) */
+    height: 350px; 
     object-fit: contain;
     object-position: bottom center;
     z-index: 2;
-    /* Instant-Wechsel ohne Verlauf */
 }
 
-/* Sichtbarkeiten */
+/* --- AB HIER BLEIBT ALLES GLEICH --- */
+
 .portrait-default {
     z-index: 4;
     opacity: 1;
@@ -420,7 +418,6 @@ p, .nav-link {
 
 /* --- HOVER EFFEKTE --- */
 
-/* Bilder wechseln blitzartig */
 .about-portrait-popout:hover .portrait-default {
     opacity: 0;
 }
@@ -429,9 +426,7 @@ p, .nav-link {
     opacity: 1;
 }
 
-/* Beim Hovern morpht die Form, bleibt unten aber perfekt sauber und flach */
 .about-portrait-popout:hover::before {
-    /* Die oberen Wellen spiegeln sich, die unteren runden Ecken tauschen weich die Plätze */
     border-radius: 35% 75% 45px 35px / 65% 100% 45px 35px;
     box-shadow: 0 15px 40px rgba(41, 7, 0, 0.1); 
 }
