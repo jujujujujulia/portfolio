@@ -80,24 +80,20 @@
                         <div class="d-flex flex-wrap gap-2 mt-2">
                             <span class="tool-badge">Blender</span>
                             <span class="tool-badge">Unity</span>
-                            <span class="tool-badge">Vuforia</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Galerie -->
             <div id="design-process" class="row mt-5">
                 <div class="col-lg-12">
                     <hr style="border-top: 1px solid #290700; opacity: 0.3; margin-bottom: 3rem;">
                     <h3 class="mb-4 text-start">3D-Modell und weitere Einblicke</h3>
             
-                    <!-- Bilder-Grid -->
                     <div class="row g-4 detail-gallery-row align-items-stretch">
             
-                        <!-- 3D-Modell -->
                         <div class="col-lg-7 col-carousel order-1">
-                            <div class="detail-gallery-container rounded-4 shadow-sm overflow-hidden">
+                            <div class="detail-gallery-container rounded-4 shadow-sm overflow-hidden" style="height: 100%; min-height: 350px;">
                                 <model-viewer src="images/sheep.glb" alt="3D Modell" auto-rotate camera-controls shadow-intensity="1">
                                 </model-viewer>
                             </div>
@@ -108,7 +104,6 @@
                             <p class="text-muted small">Mit der Maus oder dem Finger drehen & zoomen.</p>
                         </div>
             
-                        <!-- Bilder -->
                         <div class="col-lg-5 col-images order-3 order-lg-2">
                             <div class="side-image-stack gap-4">
                                 <div class="process-side-img rounded-4 shadow-sm overflow-hidden">
@@ -124,7 +119,26 @@
                 </div>
             </div>
             
-            <!-- Projekt-Navigation -->
+            <hr style="border-top: 1px solid #290700; opacity: 0.3; margin-top: 2rem; margin-bottom: 1rem;">
+
+            <div class="row mt-0 mb-2 align-items-center g-5" style="margin-top: -1rem !important;">
+                
+                <div class="col-lg-6 text-start">
+                    <p>
+                        Die Verknüpfung des klassischen Magazins mit interaktiver Augmented Reality (AR) stand im Zentrum dieses Projekts. <br> Ziel des AR-Magazins „Schlaf“ ist es, komplexe biologische Fakten, psychologische Phänomene und abstrakte Daten rund um das menschliche Schlafverhalten visuell und haptisch verständlich aufzubereiten. Während das gedruckte Layout als gestalterisches Fundament dient, erweckt die AR-Anwendung die statischen Seiten zum Leben. Durch die dreidimensionale Erweiterung werden datenintensive Inhalte – wie komplexe Schlafeinflüsse oder die feinen Nuancen von Traum- und Albtraumwelten – für die Leser*innen auf spielerische Weise tiefgehend und immersiv erfahrbar gemacht.
+                    </p>
+                    <p>
+                        Innerhalb des Teams lag mein primärer Fokus auf der Konzeption, Modellierung und Optimierung sämtlicher 3D-Assets. Unter Einsatz von Blender wurden die stilisierten, dreidimensionalen Objekte – wie das exemplarische Schaf-Modell – von Grund auf modelliert, texturiert und gezielt für die Echtzeit-Darstellung optimiert. Die technische Implementierung erfolgte anschließend in Unity: Mithilfe des Vuforia-Frameworks wurden präzise Image Targets definiert, um eine stabile und latenzfreie Verankerung der virtuellen Objekte direkt über den Magazinseiten zu garantieren. Diese Synthese aus Low-Poly-Asset-Design und digitalem Interaction Design veranschaulicht das zukunftsweisende Potenzial von AR im modernen Edutainment.
+                    </p>
+                </div>
+
+                <div class="col-lg-6">
+                    <img src="images/armagazinTree.png" class="w-100 rounded-4 shadow-sm object-fit-cover" 
+                         alt="Einblick in die AR-Anwendung" style="max-height: 450px;">
+                </div>
+
+            </div>
+
             <div class="row mt-3">
                 <div class="col-12 d-flex justify-content-between">
                     <a href="project01.html" class="stamp-btn stamp-outline">← Vorheriges Projekt</a>
@@ -133,7 +147,6 @@
             </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container text-center">
             <div class="footer-logo-wrapper">
